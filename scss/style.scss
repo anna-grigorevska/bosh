@@ -279,7 +279,7 @@ main{
           }
         }
         input:checked + label{
-          background: linear-gradient(to top, $red 0%, #ffb891 100%);
+          background: linear-gradient(to top, $red 0%, $ligh-red 100%);
           p{
             color: $white;
             text-decoration: none;
@@ -333,7 +333,8 @@ main{
       }
     }
     .border-technics{
-      border: 12px solid #e8e8e8;
+      margin-top: 35px;
+      border: 12px solid $beige;
       padding: 50px 60px;
       .free-consultation{
         background: url(../img/bg-fridge.png);
@@ -407,7 +408,7 @@ main{
       }
       .work-rules{
         h4{
-          color: #3c3e44;
+          color: $ligh-brown;
           font-size: 30px;
           font-weight: 700;
           line-height: 48px;
@@ -421,11 +422,8 @@ main{
           justify-content: space-around;
           align-items: center;
           position: relative;
-          img{
-            
-          }
           .bg-number{
-            background-color: #555555;
+            background-color: $gray;
             border-radius: 100%;
             width: 25px;
             height: 25px;
@@ -433,7 +431,7 @@ main{
             right: 20px;
             bottom: 56px;
             p{
-              color: #ffffff;
+              color: $white;
               font-size: 16px;
               font-weight: 400;
               line-height: 22px;
@@ -444,7 +442,7 @@ main{
             }
           }
           h5{
-            color: #3c3e44;
+            color: $ligh-brown;
             font-size: 16px;
             font-weight: 400;
             line-height: 22px;
@@ -456,7 +454,7 @@ main{
       .discount-services{
         margin-top: 60px;
         h4{
-          color: #3c3e44;
+          color: $ligh-brown;
           font-size: 30px;
           font-weight: 700;
           line-height: 48px;
@@ -478,7 +476,7 @@ main{
               left: 0;
               h5{
                 text-align: center;
-                color: #3c3e44;
+                color: $ligh-brown;
                 font-size: 42px;
                 font-weight: 700;
                 line-height: 22px;
@@ -487,7 +485,7 @@ main{
                 }
               }
               p{
-                color: #3c3e44;
+                color: $ligh-brown;
                 font-size: 16px;
                 font-weight: 400;
                 line-height: 22px;
@@ -500,17 +498,17 @@ main{
         .btn-individually{
           border: none;
           padding: 23px 25px;
-          color: #ffffff;
+          color: $white;
           font-size: 34px;
           font-weight: 700;
           line-height: 22px;
           display: flex;
           justify-content: center;
           align-items: center;
-          background-image: linear-gradient(to top, #e04145 0%, #ffb891 100%);
+          background-image: linear-gradient(to top, $red 0%, $ligh-red 100%);
           span{
             margin-left: 19px; 
-            color: #ffffff;
+            color: $white;
             font-size: 16px;
             font-weight: 400;
             line-height: 22px;
@@ -519,46 +517,159 @@ main{
             margin: 0 20px;
           }
           &:hover{
-            background: #ab1219;
+            background: $dark-red;
           }
         }
       }
       .repair-breakdowns{
         margin-top: 60px;
         h4{
-          color: #3c3e44;
+          color: $ligh-brown;
           font-size: 30px;
           font-weight: 700;
           line-height: 48px;
           text-align: center;
         }
         .breakdowns{
-          border: 1px solid #d0d0d0;
+          border: 1px solid $ligh-beige0;
           .breakdown-wrap{
             width: 33.3%;
-            border-right: 1px solid #d0d0d0;
+            border-right: 1px solid $ligh-beige;
+            border-bottom: 1px solid $ligh-beige;
             padding: 40px 35px 50px 35px;
             h5{
-              color: #3c3e44;
+              color: $ligh-brown;
               font-size: 20px;
               font-weight: 700;
               line-height: 48px;
+              margin-bottom: 30px;
               &:hover{
-                color: #ec1b24;
+                color: $red;
                 text-decoration: underline;
               }
             }
             .point{
+              margin-bottom: 30px;
               img{
+                margin-top: 10px;
                 height: 100%;
                 margin-right: 13px;
               }
               p{
                 margin: 0;
+                color: $ligh-brown;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 22px;
+              }
+            }
+            .price-order{
+              h6{
+                color: $ligh-brown;
+                font-size: 22px;
+                font-weight: 700;
+                line-height: 22px;
+                margin: 0;
+                margin-right: 25px;
+                span{
+                  font-size: 34px;
+                }
+              }
+              .order{
+                border: none;
+                height: 50px;
+                box-shadow: 0 4px 0 $dark-red;
+                border-radius: 8px;
+                background-color: $red;
+                text-shadow: 0 2px 2px $cherry;
+                color: $white;
+                font-size: 16px;
+                font-weight: 400;
+                cursor: pointer;
+                padding: 0 27px;
+                transition: all 0.3s;
+                &:hover{
+                  background: $dark-red;
+                }
               }
             }
           }
         }
+      }
+      .price-fridge{
+        margin-top: 50px;
+        h4{
+          color: $ligh-brown;
+          font-size: 30px;
+          font-weight: 700;
+          line-height: 48px;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        .price-wrap{
+          .rank{
+            padding-left: 25px;
+            padding-right: 25px;
+            p{
+              color: $dark-gray;
+              font-size: 14px;
+              font-weight: 300;
+              line-height: 48px;
+              margin: 0;
+            }
+          }
+          .type-repair{
+            background-image: linear-gradient(to top, $red 0%, $ligh-red 100%);
+            padding: 20px 25px 17px;
+            p{
+              color: $white;
+              margin: 0;
+              font-size: 14px;
+              font-weight: 700;
+              text-transform: uppercase;
+            }
+          }
+          .categories{
+            border: 1px solid $ligh-beige;
+            padding: 20px 25px 17px;
+            p{
+              color: $ligh-brown;
+              font-size: 16px;
+              font-weight: 400;
+              margin: 0;
+              span{
+                font-weight: 700;                           
+              }
+            }
+          }
+        }
+        .col-right{
+          width: 20%;
+        }
+        .col-left{
+          width: 25%;
+        }
+        .col-centr{
+          width: 55%;
+        }
+      }
+    }
+  }
+  .list-styled{
+    padding-left: 0;
+    list-style: none;
+    li{
+      position: relative;
+      padding-left: 20px;
+      &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 4px;
+        height: 4px;
+        border-radius: 2px;
+        background: $red;
+        top: 12px;
       }
     }
   }
@@ -567,7 +678,7 @@ main{
     overflow: hidden;
     margin-bottom: 85px;
     h2{
-      color: #3c3e44;
+      color: $ligh-brown;
       font-size: 51px;
       font-weight: 400;
       line-height: 48px;
@@ -635,18 +746,18 @@ main{
       padding-bottom: 10px;
       .repairs, .year{
         border-radius: 6px;
-        border: 1px solid #dcdcdc;
+        border: 1px solid $dark-beige;
         padding: 37px 30px 35px 30px;
         margin-bottom: 18px;
         align-items: center;
         .img-bg{
           width: 98px;
           height: 98px;
-          background-color: #e8e8e8;
+          background-color: $lactic;
           margin-right: 20px;
         }
         p{
-          color: #3c3e44;
+          color: $ligh-brown;
           font-size: 18px;
           font-weight: 300;
           line-height: 48px;
@@ -688,12 +799,12 @@ main{
     .guarrntee, .repair-cost{
       box-shadow: 0 19px 27px rgba(29, 29, 36, 0.18);
       border-radius: 6px;
-      background-color: #ffffff;
+      background-color: $white;
       width: calc(50% - 15px);
       padding: 37px 60px 35px 41px;
       p
       {
-        color: #3c3e44;
+        color: $ligh-brown;
         font-size: 22px;
         font-weight: 300;
         line-height: 28px;
@@ -705,7 +816,7 @@ main{
     .img-bg{
       min-width: 98px;
       height: 98px;
-      background-image: linear-gradient(to top, #e04145 0%, #ffb891 100%);
+      background-image: linear-gradient(to top, $red 0%, $ligh-red 100%);
       margin-right: 50px;
     }
   }
@@ -757,7 +868,7 @@ main{
           position: absolute;
           right: 20px;
           top: 86px;
-          background: linear-gradient(to top, $red 0%, #ffb891 100%);
+          background: linear-gradient(to top, $red 0%, $ligh-red 100%);
           border-radius: 100%;
           width: 56px;
           height: 56px;
@@ -876,7 +987,7 @@ main{
               transition: transform .3s;
               width: 13px;
               path {
-                fill: #000;
+                fill: $black;
                 transition: fill .3s;
               }
             }
@@ -887,7 +998,7 @@ main{
               svg{
                 transform: rotate(180deg);
                 path{
-                  fill: #fff;
+                  fill: $white;
                 }
               }
             }
