@@ -337,10 +337,14 @@ main{
       margin-top: 35px;
       border: 12px solid $beige;
       padding: 50px 60px;
+      .fridge{
+        .bg{
+          background: url(../img/bg-fridge.png);
+        }
+      }
       .free-consultation{
         .bg{
           width: 55%;
-          background: url(../img/bg-fridge.png);
           background-size: cover;
           background-repeat: no-repeat;
         }
