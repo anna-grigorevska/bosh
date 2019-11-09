@@ -1,5 +1,6 @@
 @import 'variables';
 @import "global";
+@import "modal";
 
 /* Template segments */
 header{
@@ -177,7 +178,6 @@ main{
           margin-bottom: 0;
           .form-tel{
             background: $white;
-            background-image: url(../img/tel.png);
             background-repeat: no-repeat;
             border: none;
             border-radius: 4px;
@@ -189,7 +189,8 @@ main{
             line-height: 48px;
             color: $ligh-brown;
             background-position: 4px;
-            background-position-x: 300px;
+            background-position-x: 90%;
+            padding-right: 15%;
           }
         }
         .btn-tel{
@@ -358,11 +359,13 @@ main{
           }
           .form-group-free{
             margin-bottom: 0;
+            .form-group{
+              margin-bottom: 20px;
+            }
             .form-tel,
             .form-geo,
             .form-problem{
               background: $white;
-              background-image: url(../img/tel.png);
               background-repeat: no-repeat;
               border: none;
               border-radius: 4px;
@@ -374,33 +377,8 @@ main{
               line-height: 48px;
               color: $ligh-brown;
               background-position: 4px;
-              background-position-x: 340px;
-              margin-bottom: 10px;
-            }
-            .form-geo{
-              background-image: url(../img/geo-form.png);
-            }
-            .form-problem{
-              background-image: url(../img/question-form.png);
-            }
-          }
-          .btn-tel{
-            border: none;
-            width: 100%;
-            height: 60px;
-            box-shadow: 0 4px 0 $dark-red;
-            border-radius: 8px;
-            background-color: $red;
-            text-shadow: 0 2px 2px $cherry;
-            color: $white;
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 48px;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 14px;
-            &:hover{
-              background: $dark-red;
+              background-position-x: 90%;
+              padding-right: 15%;
             }
           }
         }
@@ -985,7 +963,6 @@ main{
         margin-bottom: 0;
         .form-tel{
           background: $white;
-          background-image: url(../img/tel.png);
           background-repeat: no-repeat;
           border: none;
           border-radius: 4px;
@@ -997,7 +974,8 @@ main{
           line-height: 48px;
           color: $ligh-brown;
           background-position: 4px;
-          background-position-x: 300px;
+          background-position-x: 90%;
+          padding-right: 15%;
         }
       }
       .btn-tel{
@@ -1116,6 +1094,39 @@ footer{
     }
   }
 }
-
+.form-group{
+  position: relative;
+  input {
+    background-image: none;
+    padding-right: 10%;
+  }
+  i{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: $red;
+  }
+}
+.btn-tel{
+  border: none;
+  width: 100%;
+  height: 60px;
+  box-shadow: 0 4px 0 $dark-red;
+  border-radius: 8px;
+  background-color: $red;
+  text-shadow: 0 2px 2px $cherry;
+  color: $white;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 48px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 14px;
+  &:hover{
+    background: $dark-red;
+  }
+}
 
 @import 'media';

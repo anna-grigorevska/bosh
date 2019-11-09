@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="fonts/stylesheet.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -31,7 +32,7 @@
 				</div>
 				<div class="phone d-flex align-items-center">
 					<img src="./img/phone.png" alt="phone">
-					<a href="tel:8 (499) 123-45-67">8 (499) 123-45-67</a>
+					<a href="tel:8(499)123-45-67">8 (499) 123-45-67</a>
 				</div>
 			</div>
 		</div>
@@ -55,6 +56,7 @@
 						<h2>Бесплатная консультация <span>сервисного инженера</span></h2>
 						<div class="form-group">
 							<input type="tel" name="tel" placeholder="Ваш телефон" class="form-tel">
+							<i class="fa fa-phone" aria-hidden="true"></i>
 						</div>
 						<button class="btn-tel">Жду звонок</button>
 					</div>
@@ -143,11 +145,20 @@
 				<div class="border-technics">
 					<div class="free-consultation">
 						<div class="form-consultation d-flex">
-							<h3>Консультация <span>Бесплатно</span></h2>
+							<h3>Консультация <span>Бесплатно</span></h3>
 							<div class="form-group-free">
-								<input type="tel" name="tel" placeholder="Ваш телефон" class="form-tel">
-								<input type="text" name="geo" placeholder="Ваш адрес/район" class="form-geo">
-								<input type="text" name="problem" placeholder="Какая у Вас неисправность?" class="form-problem">
+								<div class="form-group">
+									<input type="tel" name="tel" placeholder="Ваш телефон" class="form-tel">
+									<i class="fa fa-phone" aria-hidden="true"></i>
+								</div>
+								<div class="form-group">
+									<input type="text" name="geo" placeholder="Ваш адрес/район" class="form-geo">
+									<i class="fa fa-map-marker" aria-hidden="true"></i>
+								</div>
+								<div class="form-group">
+									<input type="text" name="problem" placeholder="Какая у Вас неисправность?" class="form-problem">
+									<i class="fa fa-cog" aria-hidden="true"></i>
+								</div>
 							</div>
 							<button class="btn-tel">Жду звонок инженера</button>
 						</div>
@@ -264,12 +275,12 @@
 					</div>
 					<div class="info-about-us d-flex justify-content-between">
 						<div class="left-info">
-							<h4>Работаем так же с <span>юридическими лицами</span></h2>
+							<h4>Работаем так же с <span>юридическими лицами</span></h4>
 							<div class="border-text d-flex">
 								<img src="./img/hand.png" alt="hand">
 								<p>Заключаем договора на обслуживание</p>
 							</div>
-							<h4>Выезд сервис-инженера - <span>без выходных с 8 до 22 часов</span></h2>
+							<h4>Выезд сервис-инженера - <span>без выходных с 8 до 22 часов</span></h4>
 						</div>
 						<div class="right-info">
 							<div class="repairs d-flex">
@@ -490,7 +501,7 @@
 									принимаем заказы с 8:00 до 23:00 и работаем без выходных, оперативно реагируя на все заявки. Визит мастера обязательно начинается с детальной диагностики, а любые ремонтные работы проводятся после согласования их окончательной стоимости. Мы принимаем любые виды оплаты, подтверждаем их документально и всегда соблюдаем гарантийные обязательства.</p>
 						</div>
 					</div>
-					<div class="quesion-answer"  id="headingSix">
+					<div class="quesion-answer"  id="headingSeven">
 						<div class="quesion d-flex collapsed"  data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
 							<p>Как быстро может приехать мастер?</p>
 							<div class="arrow">
@@ -567,7 +578,7 @@
 							</div>
 							<div class="phone d-flex align-items-center">
 								<img src="./img/phone.png" alt="phone">
-								<a href="tel:8 (499) 123-45-67">8 (499) 123-45-67</a>
+								<a href="tel:8(499)123-45-67">8 (499) 123-45-67</a>
 							</div>
 						</div>
 					</div>
@@ -579,11 +590,73 @@
 			</div>
 		</div>
 	</footer>
-	
+	<div class="modals-wrap">
+		<div class="modal-body">
+			<i class="fa fa-times close" aria-hidden="true"></i>
+			<div class="we-fix modal-inner" id="fix-modal">
+				<h2 class="modal-title">Мы починим</h2>
+				<div class="modal-text-wrap">
+					<h4>Уточните данные заявки</h4>
+					<h5>и</h5>
+					<h4><span>Вам</span> позвонит Инженер:</h4>
+				</div>
+				<div class="form-group">
+					<input type="tel" class="form-control phone" placeholder="Ваш телефон">
+					<i class="fa fa-phone" aria-hidden="true"></i>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control location" placeholder="Ваш район / метро">
+					<i class="fa fa-map-marker" aria-hidden="true"></i>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control phone" placeholder="Вид техники / какие неисправности?">
+					<i class="fa fa-cog" aria-hidden="true"></i>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control phone" placeholder="Ваше имя">
+					<i class="fa fa-user" aria-hidden="true"></i>
+				</div>
+				<button class="btn-tel">Жду звонок инженера</button>
+			</div>
+			<div class="thank-callback modal-inner" id="thank-callback-modal">
+				<h2 class="modal-title">Спасибо!</h2>
+				<div class="modal-text-wrap">
+					<h4>В течение 10 мин <span>для уточнений 
+							<br>	с Вами свяжется диспетчер.</span></h4>
+					<h5>или</h5>
+					<h4><span>уточните данные - тогда Вам</span> сразу 
+						позвонит сервисный инженер:</h4>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control location" placeholder="Ваш район / метро">
+					<i class="fa fa-map-marker" aria-hidden="true"></i>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control phone" placeholder="Вид техники / какие неисправности?">
+					<i class="fa fa-cog" aria-hidden="true"></i>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control phone" placeholder="Ваше имя">
+					<i class="fa fa-user" aria-hidden="true"></i>
+				</div>
+				<button class="btn-tel">Жду звонок инженера</button>
+			</div>
+			<div class="modal-inner thank" id="thank">
+				<h2 class="modal-title">
+					Ваша заявка <br><span>принята</span>
+				</h2>
+				<h6>
+					Ожидайте звонок от наших <br>
+					специалистов <span>в течении 5 минут</span>
+				</h6>
+			</div>
+		</div>
+		<div class="overlay"></div>
+	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="scripts/vendor.js"></script>
-	<script type="text/javascript" src="scripts/scripts.min.js"></script>
+	<script src="scripts/vendor.js"></script>
+	<script src="scripts/scripts.min.js"></script>
 </body>
 </html>
