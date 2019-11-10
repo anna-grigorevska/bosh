@@ -456,6 +456,7 @@
         }
         .work-rules{
           .rules-row{
+            justify-content: center !important;
             flex-wrap: wrap;
             .rules{
               width: calc(50% - 20px);
@@ -562,6 +563,9 @@
           }
         }
       }
+      button{
+        width: 55%;
+      }
     } 
     .often-answers{
       h2{
@@ -577,13 +581,68 @@
       }
       .form-questions{
         width: 100%;
+        border-left: none;
+        border-radius: 6px;
       }
     }
+    .price-wrap {
+      min-width: 767px;
+      overflow-x: scroll;
+    }
+    .often-answers{
+      h2{
+        font-size: 30px;
+      }
+      .quesion-wrap{
+        padding: 35px 15px;
+        .quesion-answer{
+          .quesion{
+            padding: 9px 0 9px 10px;
+            p{
+              font-size: 17px;
+              max-width: calc(100% - 45px);
+            }
+            .arrow{
+              right: 10px;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 28px;
+              height: 28px;
+            }
+          }
+          .answer{
+            p{
+              padding: 15px 10px;
+              font-size: 14px;
+              line-height: 25px;
+            }
+          } 
+        }
+      }
+    } 
+    .questions-benefits{
+      .benefits{
+        ul{
+          width: 100%;
+        }
+      } 
+      .form-questions{
+        padding: 35px 27px;
+        p{
+          margin-bottom: 25px;
+        }
+      }
+      
+    } 
   }
+  
+  footer .footer-attention{
+    .up{
+      display: none;
+    }
+  } 
 }
-@media(max-width: 550px) {
 
-}
 @media(max-width: 480px) {
   main{
     .types-technology{
@@ -595,58 +654,142 @@
         }
       }
     }
-   .toggle-section{
+    .toggle-section{
     h2{
       font-size: 32px;
     }
-    .border-technics{
-      padding: 25px 3px;
-      .section-toggle{
-        .free-consultation {
-          .bg{
-            height: 275px;
-          }
-          .form-consultation h3{
-            font-size: 30pz;
+      .border-technics{
+        padding: 25px 3px;
+        .section-toggle{
+          .free-consultation {
+            .bg{
+              height: 275px;
+            }
+            .form-consultation h3{
+              font-size: 30pz;
+            }
           }
         }
-      }
-      .work-rules{
-        .rules-row{
-          .rules{
-            width: calc(50% - 10px);
-            h5{
-              font-size: 13px;
+        .work-rules{
+          .rules-row{
+            .rules{
+              width: calc(50% - 10px);
+              h5{
+                font-size: 13px;
+              }
+              .bg-number{
+                bottom: 55px;
+                right: 13px;
+              }
             }
-            .bg-number{
-              bottom: 55px;
-              right: 13px;
+          }
+        }  
+        .discount-services{
+          .discount-row{
+            .tag .text-tag{
+              padding: 14px 20px;
+              h5{
+                font-size: 20px;
+                // margin: 0;
+              }
+              p{
+                font-size: 12px;
+                line-height: 1.4;
+              }
             }
+          }
+        }
+        .repair-breakdowns {
+          h4{
+            font-size: 24px;
+            line-height: 35px;
+          }
+          .breakdowns{
+            .breakdown-wrap{
+              width: 100%;
+            }
+          }
+        }
+        .price-fridge {
+          h4{
+            font-size: 24px;
+            line-height: 35px;
           }
         }
       }  
-      .discount-services{
-        .discount-row{
-          .tag .text-tag{
-            padding: 14px 16px;
-            h5{
-              font-size: 20px;
-              margin: 0;
-            }
+    } 
+    .about-us{
+      h2{
+        font-size: 42px;
+      }
+      .info-about-us{
+        .left-info{
+          background-position-x: center;
+          padding: 20px 25px 20px 25px;
+          h4{
+            font-size: 18px;
+          }
+          .border-text {
+            width: 100%;
             p{
-              font-size: 12px;
-              line-height: 12px;
+              font-size: 15px;
             }
           }
         }
       }
-      .repair-breakdowns {
-        h4{
-          font-size: 24px;
-          line-height: 35px;
+    }
+    .circs{
+      .circs-wrap{
+        padding: 25px 19px;
+        .guarrntee,
+        .repair-cost{
+          padding: 11px 12px;
+          .img-bg{
+            width: 70px;
+            height: 70px;
+          }
+          p{
+            margin: 0;
+            font-size: 14px;
+          }
         }
       }
-    }  
-   } 
+    }
+    .discounts{
+      h2{
+        font-size: 34px;
+      }
+      .category{
+        .category-top, 
+        .category-bottom{
+          padding: 0;
+          .category-wrap{
+            .percent{
+              right: 14px;
+              top: 81px;
+            }
+          } 
+          
+        }
+      }
+      
+    }
+  }
+}
+@media(max-width: 360px) {
+  .discount-services{
+    .discount-row{
+      .tag .text-tag{
+        padding: 14px 16px;
+        h5{
+          font-size: 20px;
+          margin: 0;
+        }
+        p{
+          font-size: 12px;
+          line-height: 12px;
+        }
+      }
+    }
   }
 }

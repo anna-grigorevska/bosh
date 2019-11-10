@@ -96,9 +96,9 @@ main{
     min-height: calc(100vh - 105px);
     display: flex;
     align-items: center;
-    .pos-r{
-      position: relative;
-    }
+    overflow: hidden;
+    width: 100%;
+    position: relative;
     .form-info-servise{
       box-shadow: 0 19px 27px rgba(29, 29, 36, 0.18);
       border-radius: 6px;
@@ -235,7 +235,7 @@ main{
       }
     }
     .leag-domn{
-      right: -88px;
+      right: 30px;
       top: 50%;
       transform: translateY(-50%);
       position: absolute;
@@ -1278,8 +1278,8 @@ footer{
     }
     .up{
       position: absolute;
-      right: 200px;
-      bottom: 175px;
+      right: 30px;
+      bottom: 145px;
     }
   }
 }
@@ -1322,7 +1322,7 @@ footer{
   overflow: hidden;
   transition: all .9s;
   &.open{
-    max-height: 5000px;
+    max-height: 6000px;
   }
 }
 input.error{
