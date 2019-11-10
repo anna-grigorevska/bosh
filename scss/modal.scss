@@ -1,0 +1,115 @@
+.modals-wrap{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s;;
+  &.open{
+    opacity: 1;
+    visibility: visible;
+  }
+  .overlay{
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+  .modal-body{
+    padding: 0;
+    z-index: 1;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 12px 51px rgba(0, 0, 0, 0.44);
+    border-radius: 8px;
+    background: $beige;
+    flex: unset;
+    .modal-inner{
+      padding: 60px;
+      display: none;
+    }
+    .modal-title{
+      line-height: 48px;
+      font-size: 46px;
+      margin-bottom: 20px;
+      color: $brown;
+      text-align: center;
+    }
+    .modal-text-wrap{
+      margin-bottom: 35px;
+      h4 {
+        font-weight: bold;
+        text-align: center;
+        font-size: 18px;
+        span{
+          font-weight: normal;
+        }
+      }
+      h5{
+        text-align: center;
+        font-size: 18px;
+        color: $red;
+        font-weight: bold;
+      }
+    }
+    .form-group {
+      margin-bottom: 13px;
+      .form-control{
+        position: relative;
+        padding-right: 10%;
+        background: $white;
+        border: none;
+        border-radius: 4px;
+        width: 100%;
+        height: 60px;
+        padding-left: 25px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 48px;
+        color: $ligh-brown;
+        box-shadow: 0 5px 27px rgba(29, 29, 36, 0.18);
+      }
+    }
+    .close{
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      color: $red;
+      font-size: 26px;
+      cursor: pointer;
+    }
+    .thank{
+      padding-bottom: 300px;
+      background-image: url(../img/modal-thank-bg.png);
+      background-repeat: no-repeat;
+      background-position-y: 100%;
+      background-position-x: 100%;
+      h2{
+        font-weight: 300;
+        text-align: left;
+        span{
+          font-weight: 500;
+        }
+      }
+      h6{
+        font-size: 16px;
+        font-weight: 400;
+        color: $ligh-brown;
+        line-height: 26px;
+        span{
+          color: $red;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

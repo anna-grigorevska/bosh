@@ -1,5 +1,6 @@
 @import 'variables';
 @import "global";
+@import "modal";
 
 /* Template segments */
 header{
@@ -177,7 +178,6 @@ main{
           margin-bottom: 0;
           .form-tel{
             background: $white;
-            background-image: url(../img/tel.png);
             background-repeat: no-repeat;
             border: none;
             border-radius: 4px;
@@ -189,7 +189,8 @@ main{
             line-height: 48px;
             color: $ligh-brown;
             background-position: 4px;
-            background-position-x: 300px;
+            background-position-x: 90%;
+            padding-right: 15%;
           }
         }
         .btn-tel{
@@ -213,7 +214,7 @@ main{
       }
     }
     .leag-domn{
-      right: -70px;
+      right: -88px;
       top: 50%;
       transform: translateY(-50%);
       position: absolute;
@@ -244,17 +245,18 @@ main{
           opacity: 0;
         }
         label{
+          padding: 20px 0;
           height: 100%;
           cursor: pointer;
           position: relative;
           display: flex;
           flex-direction: column;
-          justify-content: space-around;
+          justify-content: space-between;
           align-items: center;
           transition: all 0.3s;
           background: $white;
           margin: 0;
-          P{
+          span{
             color: $ligh-brown;
             font-size: 14px;
             font-weight: bold;
@@ -274,13 +276,13 @@ main{
         }
         &:hover{
           border: 1px solid $brown;
-          P{
+          span{
             text-decoration: none;
           }
         }
         input:checked + label{
           background: linear-gradient(to top, $red 0%, $ligh-red 100%);
-          p{
+          span{
             color: $white;
             text-decoration: none;
           }
@@ -336,14 +338,58 @@ main{
       margin-top: 35px;
       border: 12px solid $beige;
       padding: 50px 60px;
+      .fridge{
+        .bg{
+          background: url(../img/bg-fridge.png);
+        }
+      }
+      .washer{
+        .bg{
+          background: url(../img/bg-washer.png);
+        }
+      }
+      .dishwasher{
+        .bg{
+          background: url(../img/bg-dishwasher.png)
+        }
+      }
+      .dryer{
+        .bg{
+          background: url(../img/bg-dryer.png)
+        }
+      }
+      .hob{
+        .bg{
+          background: url(../img/bg-hob.png)
+        }
+      }
+      .oven{
+        .bg{
+          background: url(../img/bg-oven.png)
+        }
+      }
+      .stove{
+        .bg{
+          background: url(../img/bg-stove.png)
+        }
+      }
+      .coffee{
+        .bg{
+          background: url(../img/bg-coffee-machine.png)
+        }
+      }
       .free-consultation{
-        background: url(../img/bg-fridge.png);
+        .bg{
+          width: 55%;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
         .form-consultation{
           border-radius: 0 6px 6px 0;
           background-color: $brown;
           border-left: 6px solid $gray;
-          padding: 60px 50px 60px;
-          width: 50%;
+          padding: 40px 50px 40px;
+          width: 45%;
           display: flex;
           justify-content: space-between;
           flex-direction: column;
@@ -359,11 +405,13 @@ main{
           }
           .form-group-free{
             margin-bottom: 0;
+            .form-group{
+              margin-bottom: 20px;
+            }
             .form-tel,
             .form-geo,
             .form-problem{
               background: $white;
-              background-image: url(../img/tel.png);
               background-repeat: no-repeat;
               border: none;
               border-radius: 4px;
@@ -375,33 +423,8 @@ main{
               line-height: 48px;
               color: $ligh-brown;
               background-position: 4px;
-              background-position-x: 340px;
-              margin-bottom: 10px;
-            }
-            .form-geo{
-              background-image: url(../img/geo-form.png);
-            }
-            .form-problem{
-              background-image: url(../img/question-form.png);
-            }
-          }
-          .btn-tel{
-            border: none;
-            width: 100%;
-            height: 60px;
-            box-shadow: 0 4px 0 $dark-red;
-            border-radius: 8px;
-            background-color: $red;
-            text-shadow: 0 2px 2px $cherry;
-            color: $white;
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 48px;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 14px;
-            &:hover{
-              background: $dark-red;
+              background-position-x: 90%;
+              padding-right: 15%;
             }
           }
         }
@@ -516,9 +539,6 @@ main{
           img{
             margin: 0 20px;
           }
-          &:hover{
-            background: $dark-red;
-          }
         }
       }
       .repair-breakdowns{
@@ -531,12 +551,15 @@ main{
           text-align: center;
         }
         .breakdowns{
-          border: 1px solid $ligh-beige0;
+          border: 1px solid $ligh-beige;
           .breakdown-wrap{
             width: 33.3%;
             border-right: 1px solid $ligh-beige;
             border-bottom: 1px solid $ligh-beige;
             padding: 40px 35px 50px 35px;
+            &:nth-child(3n){
+              border-right: none;
+            }
             h5{
               color: $ligh-brown;
               font-size: 20px;
@@ -649,7 +672,7 @@ main{
         .col-right{
           width: 20%;
         }
-        .col-left{
+        .col-left-bt{
           width: 25%;
         }
         .col-centr{
@@ -677,6 +700,7 @@ main{
     }
   }
   .about-us{
+    margin-top: 70px;
     width: 100%;
     overflow: hidden;
     margin-bottom: 85px;
@@ -828,6 +852,7 @@ main{
     overflow: hidden;
     padding-bottom: 10px;
     h2{
+      text-align: center;
       position: relative;
       margin-bottom: 67px;
       color: $ligh-brown;
@@ -931,6 +956,7 @@ main{
     width: 100%;
     margin-top: 57px;
     h2{
+      text-align: center;
       color: $ligh-brown;
       font-size: 51px;
       font-weight: 400;
@@ -1099,7 +1125,6 @@ main{
         margin-bottom: 0;
         .form-tel{
           background: $white;
-          background-image: url(../img/tel.png);
           background-repeat: no-repeat;
           border: none;
           border-radius: 4px;
@@ -1111,7 +1136,8 @@ main{
           line-height: 48px;
           color: $ligh-brown;
           background-position: 4px;
-          background-position-x: 300px;
+          background-position-x: 90%;
+          padding-right: 15%;
         }
       }
       .btn-tel{
@@ -1217,6 +1243,7 @@ footer{
   .footer-attention{
     background-color: $brown;
     padding: 28px 0;
+    position: relative;
     img{
       height: 100%;
     }
@@ -1228,8 +1255,53 @@ footer{
       margin: 0;
       margin-left: 23px;
     }
+    .up{
+      position: absolute;
+      right: 200px;
+      bottom: 175px;
+    }
   }
 }
-
-
+.form-group{
+  position: relative;
+  input {
+    background-image: none;
+    padding-right: 10%;
+  }
+  i{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: $red;
+  }
+}
+.btn-tel{
+  border: none;
+  width: 100%;
+  height: 60px;
+  box-shadow: 0 4px 0 $dark-red;
+  border-radius: 8px;
+  background-color: $red;
+  text-shadow: 0 2px 2px $cherry;
+  color: $white;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 48px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 14px;
+  &:hover{
+    background: $dark-red;
+  }
+}
+.section-toggle{
+  max-height: 0;
+  overflow: hidden;
+  transition: all .9s;
+  &.open{
+    max-height: 5000px;
+  }
+}
 @import 'media';
