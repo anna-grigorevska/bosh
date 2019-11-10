@@ -230,7 +230,7 @@ main{
       }
     }
     .leag-domn{
-      right: -115px;
+      right: -88px;
       top: 50%;
       transform: translateY(-50%);
       position: absolute;
@@ -272,9 +272,6 @@ main{
           transition: all 0.3s;
           background: $white;
           margin: 0;
-          .img-background{
-            background-image: linear-gradient(to top, #e04145 0%, #ffb891 100%);
-          }
           span{
             color: $ligh-brown;
             font-size: 14px;
@@ -558,9 +555,6 @@ main{
           img{
             margin: 0 20px;
           }
-          &:hover{
-            background: $dark-red;
-          }
         }
       }
       .repair-breakdowns{
@@ -673,6 +667,9 @@ main{
               font-weight: 700;
               text-transform: uppercase;
             }
+            .img-c{
+              background: linear-gradient(to top, #e04145 0%, #ffb891 100%);;
+            }
           }
           .categories{
             border: 1px solid $ligh-beige;
@@ -691,7 +688,7 @@ main{
         .col-right{
           width: 20%;
         }
-        .col-left{
+        .col-left-bt{
           width: 25%;
         }
         .col-centr{
@@ -871,6 +868,7 @@ main{
     overflow: hidden;
     padding-bottom: 10px;
     h2{
+      text-align: center;
       position: relative;
       margin-bottom: 67px;
       color: $ligh-brown;
@@ -974,6 +972,7 @@ main{
     width: 100%;
     margin-top: 57px;
     h2{
+      text-align: center;
       color: $ligh-brown;
       font-size: 51px;
       font-weight: 400;
@@ -1260,6 +1259,7 @@ footer{
   .footer-attention{
     background-color: $brown;
     padding: 28px 0;
+    position: relative;
     img{
       height: 100%;
     }
@@ -1270,6 +1270,11 @@ footer{
       line-height: 22px;
       margin: 0;
       margin-left: 23px;
+    }
+    .up{
+      position: absolute;
+      right: 200px;
+      bottom: 175px;
     }
   }
 }
