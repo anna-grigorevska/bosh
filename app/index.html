@@ -13,7 +13,7 @@
 </head>
 <body>
 
-	<header>
+	<header id="top">
 		<div class="container">
 			<div class="d-flex justify-content-between align-items-center">
 				<div class="logo d-flex align-items-center">
@@ -104,7 +104,7 @@
 				<h3><span>Выберите,</span> что у Вас сломалось</h3>
 				<div class="typrs d-flex flex-wrap">
 					<div class="technics">
-						<input type="radio" name="type" id="fridge" class="d-none" checked>
+						<input type="radio" data-type="hol" name="type" id="fridge" class="d-none" checked>
 						<label for="fridge">
 							<img src="./img/fridge.png" alt="fridge">
 							<span>Холодильники</span>
@@ -112,7 +112,7 @@
 						</label>
 					</div>
 					<div class="technics">
-						<input type="radio" name="type"  id="washer" class="d-none">
+						<input type="radio" data-type="sma" name="type"  id="washer" class="d-none">
 						<label for="washer">
 							<img src="./img/washer.png" alt="washer">
 							<span>стиральные машины</span>
@@ -120,7 +120,7 @@
 						</label>
 					</div>
 					<div class="technics">
-						<input type="radio" name="type" id="dishwasher" class="d-none">
+						<input type="radio" data-type="pmm" name="type" id="dishwasher" class="d-none">
 						<label for="dishwasher">
 							<img src="./img/dishwasher.png" alt="dishwasher">
 							<span>посудомойки</span>
@@ -128,7 +128,7 @@
 						</label>
 					</div>
 					<div class="technics">
-						<input type="radio" name="type" id="dryer" class="d-none">
+						<input type="radio" data-type="sush" name="type" id="dryer" class="d-none">
 						<label for="dryer">
 							<img src="./img/dryer.png" alt="dryer">
 							<span>Сушилки</span>
@@ -136,7 +136,7 @@
 						</label>
 					</div>
 					<div class="technics">
-						<input type="radio" name="type" id="hob" class="d-none">
+						<input type="radio" data-type="varo" name="type" id="hob" class="d-none">
 						<label for="hob">
 							<img src="./img/hob.png" alt="hob">
 							<span>Варочные поверхности</span>
@@ -144,7 +144,7 @@
 						</label>
 					</div>
 					<div class="technics">
-						<input type="radio" name="type" id="oven" class="d-none">
+						<input type="radio" data-type="duh" name="type" id="oven" class="d-none">
 						<label for="oven">
 							<img src="./img/oven.png" alt="oven">
 							<span>Духовки</span>
@@ -152,7 +152,7 @@
 						</label>
 					</div>
 					<div class="technics">
-						<input type="radio" name="type" id="stove" class="d-none">
+						<input type="radio" data-type="mcv" name="type" id="stove" class="d-none">
 						<label for="stove">
 							<img src="./img/stove.png" alt="stove">
 							<span>СВЧ печи</span>
@@ -160,7 +160,7 @@
 						</label>
 					</div>
 					<div class="technics">
-						<input type="radio" name="type" id="coffee" class="d-none">
+						<input type="radio" data-type="kof" name="type" id="coffee" class="d-none">
 						<label for="coffee">
 							<img src="./img/coffee-machine.png" alt="coffee">
 							<span>Кофемашины</span>
@@ -3412,7 +3412,7 @@
 				<img src="./img/attention.png" alt="attention">
 				<p>Все названия компаний и торговые марки являются собственностью их владельцев и использованы на сайте только с целью ознакомления. Информация на сайте не является публичной офертой. Сайт носит информационный характер и может содержать ошибки.</p>
 			</div>
-			<a href="#" class="up">
+			<a href="#top" class="up scroll">
 				<img src="./img/up.png" alt="up">
 			</a>
 		</div>

@@ -1,4 +1,9 @@
 $(document).ready(function() {
+  let activePhone = '';
+  let activeOrder = '';
+  // маска для телефона
+  $('[type="tel"]').mask("+9999 999 9999",{placeholder:" "})
+
   // изменение контента в зависимости от выбраного типа
   $('.technics input').on('change', function (e) {
     $('.technics input').prop( "disabled", true );
@@ -22,7 +27,8 @@ $(document).ready(function() {
       $('#phone-top').addClass('error');
       return false
     }
-    // api call here
+    activePhone = tel;
+    createOrder(tel);
     $('#thank-callback-modal').addClass('open');
     $('.modals-wrap').addClass('open');
   });
@@ -34,7 +40,8 @@ $(document).ready(function() {
       $('#phone-bottom').addClass('error');
       return false
     }
-    // api call here
+    activePhone = tel;
+    createOrder(tel);
     $('#thank-callback-modal').addClass('open');
     $('.modals-wrap').addClass('open');
   });
@@ -62,7 +69,7 @@ $(document).ready(function() {
       $('#thank-callback-modal input[name="user"]').addClass('error')
     }
     if(!valid) {return false}
-    // api call
+    updateOrder(user, options, location)
     $('#thank-callback-modal').removeClass('open');
     $('#thank').addClass('open')
   });
@@ -110,10 +117,26 @@ $(document).ready(function() {
     $('.modals-wrap').addClass('open');
     $('#fix-modal').addClass('open');
   })
-  // Отправка номера телефона
-  function sendPhone(phone) {
-    axios.post('https://msk.edinie.ru/site-form-api/order/create', {
-      phone
+  // Создание заявки
+  function createOrder(phone, name, description, district) {
+    let data = {phone, description: 'Test'}
+    let type_id = $('[name="type"]:checked').data();
+    if(name) {data.name = name}
+    if(description) {data.description = 'Test' + description}
+    if(district) {data.district = district}
+    if(type_id) {data.type_id = type_id.type}
+    axios.post('http://msk2-api.edinie.ru/site-form-api/order/create', data).then(data => {
+      activeOrder = data.data.code
+    })
+  }
+  // Обновление заявки
+  function updateOrder(name, description, district) {
+    let type_id = $('[name="type"]:checked').data().type;
+    axios.post('http://msk2-api.edinie.ru/site-form-api/order/update?code=' + activeOrder, {
+      description: 'Test' + description,
+      name,
+      district,
+      type_id
     })
   }
   // scroll to block 
