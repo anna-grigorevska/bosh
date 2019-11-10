@@ -106,6 +106,22 @@ main{
         width: 60%;
         border-bottom-left-radius: 6px;
         border-top-left-radius: 6px;
+        .owl-dots{
+          position: absolute;
+          bottom: 50px;
+          left: 50px;
+          .owl-dot{
+            height: 12px;
+            width: 12px;
+            border-radius: 6px;
+            margin-right: 9px;
+            background: $dark-beige;
+            outline: none;
+            &.active{
+              background-image: linear-gradient(to top, $red 0%, $ligh-red 100%);
+            }
+          }
+        }
         .service-text-wrap{
           position: absolute;
           width: 100%;
