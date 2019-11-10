@@ -36,6 +36,9 @@
     .modal-inner{
       padding: 60px;
       display: none;
+      &.open{
+        display: block;
+      }
     }
     .modal-title{
       line-height: 48px;
