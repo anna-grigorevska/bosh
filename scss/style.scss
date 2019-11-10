@@ -214,7 +214,7 @@ main{
       }
     }
     .leag-domn{
-      right: -70px;
+      right: -115px;
       top: 50%;
       transform: translateY(-50%);
       position: absolute;
@@ -245,17 +245,21 @@ main{
           opacity: 0;
         }
         label{
+          padding: 20px 0;
           height: 100%;
           cursor: pointer;
           position: relative;
           display: flex;
           flex-direction: column;
-          justify-content: space-around;
+          justify-content: space-between;
           align-items: center;
           transition: all 0.3s;
           background: $white;
           margin: 0;
-          P{
+          .img-background{
+            background-image: linear-gradient(to top, #e04145 0%, #ffb891 100%);
+          }
+          span{
             color: $ligh-brown;
             font-size: 14px;
             font-weight: bold;
@@ -275,13 +279,13 @@ main{
         }
         &:hover{
           border: 1px solid $brown;
-          P{
+          span{
             text-decoration: none;
           }
         }
         input:checked + label{
           background: linear-gradient(to top, $red 0%, $ligh-red 100%);
-          p{
+          span{
             color: $white;
             text-decoration: none;
           }
@@ -340,6 +344,41 @@ main{
       .fridge{
         .bg{
           background: url(../img/bg-fridge.png);
+        }
+      }
+      .washer{
+        .bg{
+          background: url(../img/bg-washer.png);
+        }
+      }
+      .dishwasher{
+        .bg{
+          background: url(../img/bg-dishwasher.png)
+        }
+      }
+      .dryer{
+        .bg{
+          background: url(../img/bg-dryer.png)
+        }
+      }
+      .hob{
+        .bg{
+          background: url(../img/bg-hob.png)
+        }
+      }
+      .oven{
+        .bg{
+          background: url(../img/bg-oven.png)
+        }
+      }
+      .stove{
+        .bg{
+          background: url(../img/bg-stove.png)
+        }
+      }
+      .coffee{
+        .bg{
+          background: url(../img/bg-coffee-machine.png)
         }
       }
       .free-consultation{
