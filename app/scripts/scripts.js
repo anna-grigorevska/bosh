@@ -135,9 +135,15 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 });
 'use strict';
 
+var apiUrl = 'http://msk2-api.edinie.ru';
+var types = ['hol', 'sma', 'pmm', 'sush', 'varo', 'duh', 'mcv', 'kof'];
 $(document).ready(function () {
   var activePhone = '';
   var activeOrder = '';
+  // добавленние типов техники
+  types.map(function (item) {
+    $('[data-type="' + item + '"]').parents('.technics').removeClass('d-none');
+  });
   // маска для телефона
   $('[type="tel"]').mask("+9999 999 9999", { placeholder: " " });
 
@@ -210,7 +216,37 @@ $(document).ready(function () {
     $('#thank-callback-modal').removeClass('open');
     $('#thank').addClass('open');
   });
-
+  // обработчик клика на кнопку модального окна fix-modal
+  $('#fix-modal button').click(function () {
+    var valid = true;
+    $('#fix-modal input').removeClass('error');
+    var phone = $('#fix-modal input[name="phone"]').val() || false;
+    if (!phone) {
+      valid = false;
+      $('#fix-modal input[name="phone"]').addClass('error');
+    }
+    var location = $('#fix-modal input[name="location"]').val() || false;
+    if (!location) {
+      valid = false;
+      $('#fix-modal input[name="location"]').addClass('error');
+    }
+    var option = $('#fix-modal input[name="option"]').val() || false;
+    if (!option) {
+      valid = false;
+      $('#fix-modal input[name="option"]').addClass('error');
+    }
+    var user = $('#fix-modal input[name="user"]').val() || false;
+    if (!user) {
+      valid = false;
+      $('#fix-modal input[name="user"]').addClass('error');
+    }
+    if (!valid) {
+      return false;
+    }
+    createOrder(phone, user, option, location);
+    $('#fix-modal').removeClass('open');
+    $('#thank').addClass('open');
+  });
   // Обработка форм в изменяющемся контенте
   $('.main-form').on('submit', function (e) {
     e.preventDefault();
@@ -235,6 +271,7 @@ $(document).ready(function () {
       return false;
     }
     // api call
+    createOrder(phone, '', option, location);
     $('.modals-wrap').addClass('open');
     $('#thank').addClass('open');
   });
@@ -272,14 +309,14 @@ $(document).ready(function () {
     if (type_id) {
       data.type_id = type_id.type;
     }
-    axios.post('http://msk2-api.edinie.ru/site-form-api/order/create', data).then(function (data) {
+    axios.post(apiUrl + '/site-form-api/order/create', data).then(function (data) {
       activeOrder = data.data.code;
     });
   }
   // Обновление заявки
   function updateOrder(name, description, district) {
     var type_id = $('[name="type"]:checked').data().type;
-    axios.post('http://msk2-api.edinie.ru/site-form-api/order/update?code=' + activeOrder, {
+    axios.post(apiUrl + '/site-form-api/order/update?code=' + activeOrder, {
       description: 'Test' + description,
       name: name,
       district: district,
@@ -297,3 +334,6 @@ $(document).ready(function () {
     }
   });
 });
+'use strict';
+
+console.log('menu');

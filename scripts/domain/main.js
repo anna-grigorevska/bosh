@@ -1,6 +1,12 @@
+const apiUrl = 'http://msk2-api.edinie.ru';
+const types = ['hol', 'sma', 'pmm', 'sush', 'varo', 'duh', 'mcv', 'kof'];
 $(document).ready(function() {
   let activePhone = '';
   let activeOrder = '';
+  // добавленние типов техники
+  types.map(item => {
+    $('[data-type="'+ item +'"]').parents('.technics').removeClass('d-none')
+  })
   // маска для телефона
   $('[type="tel"]').mask("+9999 999 9999",{placeholder:" "})
 
@@ -73,7 +79,35 @@ $(document).ready(function() {
     $('#thank-callback-modal').removeClass('open');
     $('#thank').addClass('open')
   });
-
+  // обработчик клика на кнопку модального окна fix-modal
+  $('#fix-modal button').click(function() {
+    let valid = true;
+    $('#fix-modal input').removeClass('error')
+    let phone = $('#fix-modal input[name="phone"]').val() || false;
+    if(!phone){
+      valid = false;
+      $('#fix-modal input[name="phone"]').addClass('error')
+    }
+    let location = $('#fix-modal input[name="location"]').val() || false;
+    if(!location){
+      valid = false;
+      $('#fix-modal input[name="location"]').addClass('error')
+    }
+    let option = $('#fix-modal input[name="option"]').val() || false;
+    if(!option){
+      valid = false;
+      $('#fix-modal input[name="option"]').addClass('error')
+    }
+    let user = $('#fix-modal input[name="user"]').val() || false;
+    if(!user){
+      valid = false;
+      $('#fix-modal input[name="user"]').addClass('error')
+    }
+    if(!valid) {return false}
+    createOrder(phone, user, option, location)
+    $('#fix-modal').removeClass('open');
+    $('#thank').addClass('open')
+  });
   // Обработка форм в изменяющемся контенте
   $('.main-form').on('submit', function(e){
     e.preventDefault();
@@ -96,6 +130,7 @@ $(document).ready(function() {
     }
     if(!valid) {return false}
     // api call
+    createOrder(phone, '', option, location);
     $('.modals-wrap').addClass('open');
     $('#thank').addClass('open')
   })
@@ -125,14 +160,14 @@ $(document).ready(function() {
     if(description) {data.description = 'Test' + description}
     if(district) {data.district = district}
     if(type_id) {data.type_id = type_id.type}
-    axios.post('http://msk2-api.edinie.ru/site-form-api/order/create', data).then(data => {
+    axios.post(apiUrl + '/site-form-api/order/create', data).then(data => {
       activeOrder = data.data.code
     })
   }
   // Обновление заявки
   function updateOrder(name, description, district) {
     let type_id = $('[name="type"]:checked').data().type;
-    axios.post('http://msk2-api.edinie.ru/site-form-api/order/update?code=' + activeOrder, {
+    axios.post(apiUrl + '/site-form-api/order/update?code=' + activeOrder, {
       description: 'Test' + description,
       name,
       district,
