@@ -8,6 +8,10 @@ header{
   width: 100%;
   align-items: center;
   display: flex;
+  position: fixed;
+  background: $white;
+  z-index: 2;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
   .logo{
     p{
       margin-left: 30px;
@@ -85,6 +89,7 @@ header{
   }  
 }
 main{
+  padding-top: 106px;
   .service{
     background: $beige url(../img/bg-service.png);
     padding: 75px 0;
