@@ -281,8 +281,11 @@ main{
           transition: all 0.3s;
           background: $white;
           margin: 0;
-          svg path, svg circle{
-            fill: $red;
+          svg{
+            width: 100%;
+            path, circle{
+              fill: $red;
+            }
           }
           span{
             color: $ligh-brown;
@@ -310,6 +313,9 @@ main{
         }
         input:checked + label{
           background: linear-gradient(to top, $red 0%, $ligh-red 100%);
+          svg path {
+            fill: $white;
+          }
           span{
             color: $white;
             text-decoration: none;
@@ -425,6 +431,12 @@ main{
               border: 7px solid #ec1b24;
               border-radius: 12px 0;
               padding: 15px 10px;
+              svg {
+                width: 40px;
+                path, rect{
+                  fill: $red;
+                }
+              }
               h3{
                 margin: 10px 0 0 18px;
                 color: #ec1b24;
