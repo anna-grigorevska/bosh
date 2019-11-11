@@ -338,7 +338,7 @@ $(document).ready(function () {
 
 console.log('menu');
 $(document).ready(function () {
-  $('#menu-toggle').click(function () {
+  $('#menu-toggle, #menu-toggle-bottom').click(function () {
     $('#mobile-navigation').addClass('open');
   });
   $('#close-menu').click(function () {

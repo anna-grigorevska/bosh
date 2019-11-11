@@ -12,6 +12,10 @@ header{
   background: $white;
   z-index: 2;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+  i{
+    font-size: 26px;
+    color: $red;
+  }
   .logo{
     p{
       margin-left: 30px;
@@ -36,9 +40,9 @@ header{
         font-weight: 500;
       }
     }
-    img{
-      width: 33px;
-      height: 33px;
+    i{
+      font-size: 26px;
+      color: $red;
     }
   }
   .work-time{
@@ -53,9 +57,9 @@ header{
         font-weight: 400;
       }
     }
-    img{
-      width: 33px;
-      height: 33px;
+    i{
+      font-size: 26px;
+      color: $red;
     }
   }
   .phone{
@@ -82,19 +86,14 @@ header{
         width: 100%;
       }
     }
-    img{
-      width: 33px;
-      height: 33px;
+    i{
+      font-size: 26px;
+      color: $red;
     }
-  }  
-  .menu-toggle{
-    // display: none;
   }
-  
-  
 }
 main{
-  padding-top: 106px;
+  padding-top: 85px;
   .service{
     background: $beige url(../img/bg-service.png);
     padding: 75px 0;
@@ -282,6 +281,9 @@ main{
           transition: all 0.3s;
           background: $white;
           margin: 0;
+          svg path, svg circle{
+            fill: $red;
+          }
           span{
             color: $ligh-brown;
             font-size: 14px;
@@ -314,6 +316,9 @@ main{
           }
           .chack-mark{
             opacity: 1;
+          }
+          svg path, svg circle{
+            fill: $white;
           }
         }
       }
@@ -852,7 +857,7 @@ main{
         .img-bg{
           width: 98px;
           height: 98px;
-          background-color: $lactic;
+          background-color: $beige;
           margin-right: 20px;
         }
         p{
@@ -1260,9 +1265,9 @@ footer{
           font-weight: 500;
         }
       }
-      img{
-        width: 33px;
-        height: 33px;
+      i{
+        font-size: 26px;
+        color: $red;
       }
     }
     .work-time{
@@ -1277,9 +1282,9 @@ footer{
           font-weight: 400;
         }
       }
-      img{
-        width: 33px;
-        height: 33px;
+      i{
+        font-size: 26px;
+        color: $red;
       }
     }
     .phone{
@@ -1306,9 +1311,9 @@ footer{
           width: 100%;
         }
       }
-      img{
-        width: 33px;
-        height: 33px;
+      i{
+        font-size: 26px;
+        color: $red;
       }
     } 
   }
