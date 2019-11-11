@@ -282,6 +282,9 @@ main{
           transition: all 0.3s;
           background: $white;
           margin: 0;
+          svg path {
+            fill: $red;
+          }
           span{
             color: $ligh-brown;
             font-size: 14px;
@@ -308,6 +311,9 @@ main{
         }
         input:checked + label{
           background: linear-gradient(to top, $red 0%, $ligh-red 100%);
+          svg path {
+            fill: $white;
+          }
           span{
             color: $white;
             text-decoration: none;
