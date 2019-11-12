@@ -298,7 +298,9 @@ main{
           background: $white;
           margin: 0;
           svg{
-            width: 100%;
+            width: 60%;
+            max-width: 100px;
+            max-height: 105px;
             path, circle{
               fill: $red;
             }
@@ -441,10 +443,10 @@ main{
             width: 45%;
             box-shadow: 0 9px 18px rgba(0, 0, 0, 0.44);
             border-radius: 12px 0;
-            border: 4px solid #ffffff;
-            background-color: #ffffff;
+            border: 4px solid $white;
+            background-color: $white;
             .color-guarantee{
-              border: 7px solid #ec1b24;
+              border: 7px solid $red;
               border-radius: 12px 0;
               padding: 15px 10px;
               svg {
@@ -455,17 +457,17 @@ main{
               }
               h3{
                 margin: 10px 0 0 18px;
-                color: #ec1b24;
+                color: $red;
                 font-size: 17px;
                 font-weight: 700;
                 line-height: 25px;
                 text-transform: uppercase;
                 span{
-                  color: #3c3e44;
+                  color: $ligh-brown;
                 }
               }
               p{
-                color: #555555;
+                color: $gray;
                 font-size: 14px;
                 font-weight: 400;
                 margin: 15px 0 0;
@@ -772,7 +774,7 @@ main{
               text-transform: uppercase;
             }
             .img-c{
-              background: linear-gradient(to top, #e04145 0%, #ffb891 100%);;
+              background: linear-gradient(to top, $red 0%, $ligh-red 100%);;
             }
           }
           .categories{
@@ -1145,6 +1147,7 @@ main{
             .arrow{
               background: $red;
               svg{
+                box-shadow: 0 2px 2px #971117;
                 transform: rotate(180deg);
                 path{
                   fill: $white;
@@ -1378,7 +1381,7 @@ footer{
     .up{
       position: absolute;
       right: 30px;
-      bottom: 145px;
+      bottom: 174px;
     }
   }
 }
