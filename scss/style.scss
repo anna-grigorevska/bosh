@@ -3,6 +3,22 @@
 @import "modal";
 
 /* Template segments */
+
+.icons-elipses{
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  border: 1px solid $red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    height: 14px;
+    path, rect {
+      fill: $red;
+    }
+  }
+}
 header{
   height: 106px;
   width: 100%;
@@ -518,6 +534,12 @@ main{
           justify-content: space-around;
           align-items: center;
           position: relative;
+          svg{
+            max-width: 55px;
+            path, rect{
+              fill: $red;
+            }
+          }
           .bg-number{
             background-color: $gray;
             border-radius: 100%;
