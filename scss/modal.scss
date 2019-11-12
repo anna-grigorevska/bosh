@@ -36,6 +36,8 @@
     .modal-inner{
       padding: 60px;
       display: none;
+      max-height: 100vh;
+      overflow: auto;
       &.open{
         display: block;
       }
