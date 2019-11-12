@@ -282,7 +282,9 @@ main{
           background: $white;
           margin: 0;
           svg{
-            width: 100%;
+            width: 60%;
+            max-width: 100px;
+            max-height: 105px;
             path, circle{
               fill: $red;
             }
@@ -1114,6 +1116,7 @@ main{
             .arrow{
               background: $red;
               svg{
+                box-shadow: 0 2px 2px #971117;
                 transform: rotate(180deg);
                 path{
                   fill: $white;
@@ -1347,7 +1350,7 @@ footer{
     .up{
       position: absolute;
       right: 30px;
-      bottom: 145px;
+      bottom: 174px;
     }
   }
 }
