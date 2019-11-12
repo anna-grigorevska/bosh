@@ -151,6 +151,8 @@ $(document).ready(function () {
   $('.technics input').on('change', function (e) {
     $('.technics input').prop("disabled", true);
     $('.section-toggle.open').removeClass('open');
+    var newTitle = $(this).parents('.technics').find('span').text().toLowerCase();
+    $('#active-name').text(newTitle);
     setTimeout(function () {
       $('.' + e.target.id).addClass('open');
       $('.technics input').prop("disabled", false);
@@ -287,11 +289,13 @@ $(document).ready(function () {
   $('#commercial-proposal').click(function () {
     $('.modals-wrap').addClass('open');
     $('#fix-modal').addClass('open');
+    $('#fix-modal [name="option"]').val('запрос юрлица');
   });
   // узнать о скидке
   $('#discount').click(function () {
     $('.modals-wrap').addClass('open');
     $('#fix-modal').addClass('open');
+    $('#fix-modal [name="option"]').val('узнать о скидке');
   });
   // Создание заявки
   function createOrder(phone, name, description, district) {
@@ -333,10 +337,14 @@ $(document).ready(function () {
       }, 500);
     }
   });
+  $('[data-type="' + types[0] + '"]').prop("checked", true);
+  var title = $('[data-type="' + types[0] + '"]').parents('.technics').find('span').text().toLowerCase();
+  var activeInputId = $('[data-type="' + types[0] + '"]').attr('id');
+  $('.' + activeInputId).addClass('open');
+  $('#active-name').text(title);
 });
 'use strict';
 
-console.log('menu');
 $(document).ready(function () {
   $('#menu-toggle, #menu-toggle-bottom').click(function () {
     $('#mobile-navigation').addClass('open');

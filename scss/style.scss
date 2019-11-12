@@ -534,6 +534,15 @@ main{
           justify-content: space-around;
           align-items: center;
           position: relative;
+          &:before {
+            content: url(../img/line.png);
+            position: absolute;
+            top: -20px;
+            left: 80%;
+          }
+          &:last-child:before {
+            display: none;
+          }
           svg{
             max-width: 55px;
             path, rect{
@@ -1188,7 +1197,7 @@ main{
             padding-right: 9px;
             height: 100%;
           }
-          li{
+          .li-text{
             width: 70%;
             list-style: none;
             color: $ligh-brown;
@@ -1379,13 +1388,17 @@ footer{
     background-image: none;
     padding-right: 10%;
   }
-  i{
+  i, svg{
     position: absolute;
     right: 5%;
     top: 50%;
     transform: translateY(-50%);
     font-size: 16px;
     color: $red;
+    height: 16px;
+    rect, path {
+      fill: red;
+    }
   }
 }
 .btn-tel{

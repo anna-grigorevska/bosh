@@ -1,4 +1,3 @@
-console.log('menu')
 $(document).ready(function(){
   $('#menu-toggle, #menu-toggle-bottom').click(function () {
     $('#mobile-navigation').addClass('open');
