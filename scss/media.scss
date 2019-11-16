@@ -47,7 +47,7 @@
                 font-size: 13px;
               }
             }
-            h1{
+            h1, h2{
               font-size: 21px;
               span{
                 font-size: 60px;
@@ -398,6 +398,9 @@
     }
     
   }
+  main .toggle-section .border-technics .work-rules .rules:before{
+    display: none;
+  }
 }
 @media(max-width: 992px) {
   header{
@@ -438,6 +441,11 @@
           font-weight: 700;
           line-height: 26px;
           margin-left: 15px;
+          display: block;
+          border-bottom: 1px dashed #000;
+          &:hover{
+            text-decoration: none;
+          }
         }
       }
       .hamburger{
@@ -583,7 +591,7 @@
             margin-left: 20px;
             color: $ligh-brown;
             font-size: 14px;
-            font-weight: 300;
+            font-weight: 600;
             line-height: 22px;
             text-transform: uppercase;
             margin-bottom: 0;
@@ -796,10 +804,6 @@
       width: 100%;
       overflow: auto;
     }
-    .price-wrap {
-      min-width: 767px;
-      overflow-x: scroll;
-    }
     .often-answers{
       h2{
         font-size: 30px;
@@ -844,6 +848,46 @@
         }
       }
       
+    }
+    .toggle-section .border-technics .price-fridge {
+      position: relative;
+      overflow: auto;
+      .price-wrap {
+        position: relative;
+        min-width: 767px;
+      }
+      .nicescroll-rails-hr {
+        top: 100px;
+        height: 16px !important;
+        background-color: #d0d0d0;
+        opacity: 1 !important;
+        .nicescroll-cursors{
+          height: 14px !important;
+          box-shadow: 0 2px 0 $dark-red !important;
+          background-color: $red !important;
+          border: none !important;
+          border-radius: 0 !important;
+          .scroll-custom{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            span {
+              height: 7px;
+              width: 1px;
+              background: #fff;
+              margin-right: 4px;
+              &:last-child{
+                margin-right: 0;
+              }
+            }
+          }
+        }
+      }
+      h4 {
+        margin-bottom: 50px;
+      }
     } 
   }
   
@@ -980,11 +1024,46 @@
       }
     }
     .footer-attention{
+      padding-right: 65px;
+      .container{
+        flex-direction: column;
+        align-items: center;
+        p{
+          margin-top: 15px;
+          margin-left: 0;
+        }
+      }
+      &:before{
+        content: '';
+        height: 100%;
+        width: 65px;
+        background: #fff;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
       .up{
-        display: none;
+        width: 50px;
+        overflow: hidden;
+        right: 10px;
+        bottom: 50%;
+        transform: translateY(50%);
+        img {
+          width: 100%;
+          height: unset;
+        }
       }
     } 
-  } 
+  }
+  main .toggle-section .border-technics .free-consultation .form-consultation .form-group-free .form-group{
+    margin-bottom: 10px;
+  }
+  .price-order{
+    justify-content: space-between;
+  }
+  main .questions-benefits .benefits ul .ul-img .li-text{
+    width: 100%;
+  }
 }
 @media(max-width: 480px) {
   header{
@@ -1011,21 +1090,37 @@
     } 
   }
   main{
+    .types-technology .typrs .technics label {
+      justify-content: center;
+      svg {
+        max-width: 80px;
+        max-height: 80px;
+        margin-bottom: 10px;
+      }
+    } 
     .service .form-info-servise {
       .form-service{
         padding: 35px 30px 25px;
         h2{
           font-size: 33px;
+          line-height: 1.2;
         }
       }
       .info-servise {
         .item{
           padding-bottom: 180px;
-          .service-text-wrap h1 {
-            bottom: 30px;
+          .service-text-wrap h1, .service-text-wrap h2 {
+            bottom: 50px;
             top: unset;
             left: 50%;
             transform: translateX(-50%);
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: center;
+            width: 100%;
+            span {
+              font-size: 24px;
+            }
           }
         }
         .owl-dots {
@@ -1068,7 +1163,7 @@
             .rules{
               width: calc(50% - 10px);
               h5{
-                font-size: 13px;
+                font-size: 16px;
               }
               .bg-number{
                 bottom: 55px;

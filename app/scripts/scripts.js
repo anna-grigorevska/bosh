@@ -152,15 +152,41 @@ $(document).ready(function () {
     $('.technics input').prop("disabled", true);
     $('.section-toggle.open').removeClass('open');
     var newTitle = $(this).parents('.technics').find('span').text().toLowerCase();
-    $('#active-name').text(newTitle);
+    $('#active-name').text(getTitle(newTitle));
     setTimeout(function () {
       $('.' + e.target.id).addClass('open');
       $('.technics input').prop("disabled", false);
     }, 900);
   });
+  // Вернуть заголовок
+  function getTitle(title) {
+    switch (title) {
+      case 'холодильники':
+        return 'холодильник';
+      case 'стиральные машины':
+        return 'стиральную машину';
+      case 'посудомойки':
+        return 'посудомойку';
+      case 'сушилки':
+        return 'сушилку';
+      case 'варочные поверхности':
+        return 'варочную поверхность';
+      case 'духовки':
+        return 'духовку';
+      case 'свч печи':
+        return 'свч печь';
+      case 'кофемашины':
+        return 'кофемашину';
+      default:
+        return '';
+    }
+  }
+
   // подкалюченние слайдера
   $('.owl-carousel').owlCarousel({
-    items: 1
+    items: 1,
+    autoplay: true,
+    loop: true
   });
   // Открытие модального окна с верхней формы
   $('#top-form').click(function () {
@@ -299,13 +325,13 @@ $(document).ready(function () {
   });
   // Создание заявки
   function createOrder(phone, name, description, district) {
-    var data = { phone: phone, description: 'Test' };
+    var data = { phone: phone, description: '' };
     var type_id = $('[name="type"]:checked').data();
     if (name) {
       data.name = name;
     }
     if (description) {
-      data.description = 'Test' + description;
+      data.description = '' + description;
     }
     if (district) {
       data.district = district;
@@ -321,7 +347,7 @@ $(document).ready(function () {
   function updateOrder(name, description, district) {
     var type_id = $('[name="type"]:checked').data().type;
     axios.post(apiUrl + '/site-form-api/order/update?code=' + activeOrder, {
-      description: 'Test' + description,
+      description: '' + description,
       name: name,
       district: district,
       type_id: type_id
@@ -337,11 +363,18 @@ $(document).ready(function () {
       }, 500);
     }
   });
+  // custom scroll
+  setTimeout(function () {
+    $('body').niceScroll();
+  }, 1000);
+  $('.price-fridge').niceScroll('.price-wrap');
+  console.log();
+  $('.nicescroll-rails-hr .nicescroll-cursors').html('<div class="scroll-custom"><span></span><span></span><span></span></div>');
   $('[data-type="' + types[0] + '"]').prop("checked", true);
   var title = $('[data-type="' + types[0] + '"]').parents('.technics').find('span').text().toLowerCase();
   var activeInputId = $('[data-type="' + types[0] + '"]').attr('id');
   $('.' + activeInputId).addClass('open');
-  $('#active-name').text(title);
+  $('#active-name').text(getTitle(title));
 });
 'use strict';
 
