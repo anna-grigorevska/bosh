@@ -12,6 +12,9 @@ const typeId = {
   var: 20
 };
 $(document).ready(function() {
+  $("img").lazyload({
+    effect : "fadeIn"
+});
   let activePhone = '';
   let activeOrder = '';
   // добавленние типов техники
