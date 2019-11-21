@@ -1043,14 +1043,18 @@
         top: 0;
       }
       .up{
-        width: 50px;
-        overflow: hidden;
+        width: 30px;
         right: 10px;
         bottom: 50%;
         transform: translateY(50%);
-        img {
-          width: 100%;
-          height: unset;
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+        span{
+          font-size: 11px;
+          left: 0;
+          bottom: 0;
         }
       }
     } 

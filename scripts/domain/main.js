@@ -1,5 +1,16 @@
 const apiUrl = 'http://msk2-api.edinie.ru';
-const types = ['hol', 'sma', 'pmm', 'sush', 'varo', 'duh', 'mcv', 'kof'];
+const types = ['hol', 'sma', 'pmm', 'sush', 'var', 'duh', 'svch', 'kof'];
+const brandId = 36;
+const typeId = {
+  sush: 12,
+  sma: 11,
+  hol: 10,
+  pmm: 13,
+  duh: 14,
+  kof: 16,
+  svch: 18,
+  var: 20
+};
 $(document).ready(function() {
   let activePhone = '';
   let activeOrder = '';
@@ -8,8 +19,7 @@ $(document).ready(function() {
     $('[data-type="'+ item +'"]').parents('.technics').removeClass('d-none')
   })
   // маска для телефона
-  $('[type="tel"]').mask("+9999 999 9999",{placeholder:" "})
-
+  $('[type="tel"]').inputmask("8999 999 9999");
   // изменение контента в зависимости от выбраного типа
   $('.technics input').on('change', function (e) {
     $('.technics input').prop( "disabled", true );
@@ -51,7 +61,8 @@ $(document).ready(function() {
   $('.owl-carousel').owlCarousel({
     items: 1,
     autoplay: true,
-    loop: true
+    loop: true,
+    margin: 15
   });
   // Открытие модального окна с верхней формы
   $('#top-form').click(function() {
@@ -189,7 +200,8 @@ $(document).ready(function() {
     if(name) {data.name = name}
     if(description) {data.description = '' + description}
     if(district) {data.district = district}
-    if(type_id) {data.type_id = type_id.type}
+    if(type_id) {data.type_id = typeId[type_id.type]}
+    data.brand_id = brandId;
     axios.post(apiUrl + '/site-form-api/order/create', data).then(data => {
       activeOrder = data.data.code
     })
@@ -197,11 +209,13 @@ $(document).ready(function() {
   // Обновление заявки
   function updateOrder(name, description, district) {
     let type_id = $('[name="type"]:checked').data().type;
+    type_id = typeId[type_id]
     axios.post(apiUrl + '/site-form-api/order/update?code=' + activeOrder, {
       description: '' + description,
       name,
       district,
-      type_id
+      type_id,
+      brand_id: brandId
     })
   }
   // scroll to block 
@@ -210,23 +224,34 @@ $(document).ready(function() {
     if( target.length ) {
         event.preventDefault();
         $('html, body').animate({
-            scrollTop: target.offset().top
+            scrollTop: target.offset().top - 85
         }, 500);
     }
   });
-  // custom scroll
-  setTimeout(
-    () => {
-      $('body').niceScroll();
-    },
-    1000
-  )
-  $('.price-fridge').niceScroll('.price-wrap');
-  console.log()
-  $('.nicescroll-rails-hr .nicescroll-cursors').html('<div class="scroll-custom"><span></span><span></span><span></span></div>')
-  $(`[data-type="${types[0]}"]`).prop( "checked", true );
-  let title = $(`[data-type="${types[0]}"]`).parents('.technics').find('span').text().toLowerCase();
-  let activeInputId = $(`[data-type="${types[0]}"]`).attr('id');
-  $('.' + activeInputId).addClass('open');
-  $('#active-name').text(getTitle(title));
-})
+ // обработка якоря в ссылке
+  let url = window.location.hash
+  if (url.length) {
+    $('.section-toggle').removeClass('open');
+    url = url.slice(1, url.length)
+    const anchor = url
+    url = url.split('-')
+    $(`[data-type="${url[0]}"]`).prop( "checked", true );
+    let activeInputId = $(`[data-type="${url[0]}"]`).attr('id');
+    $('.' + activeInputId).addClass('open');
+    let title = $(`[data-type="${url[0]}"]`).parents('.technics').find('span').text().toLowerCase();
+    $('#active-name').text(getTitle(title));
+    setTimeout(
+      () => {
+        $('html, body').animate({
+          scrollTop: $(`[name="${anchor}"]`).offset().top - 150
+        }, 0);
+      },
+      900)
+  } else {
+    $(`[data-type="${types[0]}"]`).prop( "checked", true );
+    let title = $(`[data-type="${types[0]}"]`).parents('.technics').find('span').text().toLowerCase();
+    let activeInputId = $(`[data-type="${types[0]}"]`).attr('id');
+    $('.' + activeInputId).addClass('open');
+    $('#active-name').text(getTitle(title));
+  }
+});
