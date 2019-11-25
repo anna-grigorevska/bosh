@@ -2769,7 +2769,10 @@ $(document).ready(function () {
   }
   // Обновление заявки
   function updateOrder(name, description, district) {
-    var type_id = $('[name="type"]:checked').data().type;
+    var type_id = void 0;
+    if ($('[name="type"]:checked').data()) {
+      type_id = $('[name="type"]:checked').data().type;
+    }
     type_id = typeId[type_id];
     axios.post(apiUrl + '/site-form-api/order/update?code=' + activeOrder, {
       description: '' + description,
@@ -2791,11 +2794,11 @@ $(document).ready(function () {
   });
   // обработка якоря в ссылке
   var url = window.location.hash;
-  if (url.length) {
+  url = url.slice(1, url.length);
+  var anchor = url;
+  url = url.split('-');
+  if (url.length && $('[data-type="' + url[0] + '"]').length) {
     $('.section-toggle').removeClass('open');
-    url = url.slice(1, url.length);
-    var anchor = url;
-    url = url.split('-');
     $('[data-type="' + url[0] + '"]').prop("checked", true);
     var activeInputId = $('[data-type="' + url[0] + '"]').attr('id');
     $('.' + activeInputId).addClass('open');
@@ -2807,7 +2810,14 @@ $(document).ready(function () {
       }, 0);
     }, 900);
   } else {
-    $('[data-type="' + types[0] + '"]').prop("checked", true);
+    if (anchor.length) {
+      setTimeout(function () {
+        $('html, body').animate({
+          scrollTop: $('[name="' + anchor + '"]').offset().top - 150
+        }, 0);
+      }, 900);
+    }
+    // $(`[data-type="${types[0]}"]`).prop( "checked", true );
     var _title = $('[data-type="' + types[0] + '"]').parents('.technics').find('span').text().toLowerCase();
     var _activeInputId = $('[data-type="' + types[0] + '"]').attr('id');
     $('.' + _activeInputId).addClass('open');
