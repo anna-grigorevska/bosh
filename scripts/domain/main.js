@@ -261,9 +261,9 @@ $(document).ready(function() {
       900)
     }
     // $(`[data-type="${types[0]}"]`).prop( "checked", true );
-    let title = $(`[data-type="${types[0]}"]`).parents('.technics').find('span').text().toLowerCase();
+    // let title = $(`[data-type="${types[0]}"]`).parents('.technics').find('span').text().toLowerCase();
     let activeInputId = $(`[data-type="${types[0]}"]`).attr('id');
     $('.' + activeInputId).addClass('open');
-    $('#active-name').text(getTitle(title));
+    $('#active-name').text('технику');
   }
 });

@@ -2818,10 +2818,10 @@ $(document).ready(function () {
       }, 900);
     }
     // $(`[data-type="${types[0]}"]`).prop( "checked", true );
-    var _title = $('[data-type="' + types[0] + '"]').parents('.technics').find('span').text().toLowerCase();
+    // let title = $(`[data-type="${types[0]}"]`).parents('.technics').find('span').text().toLowerCase();
     var _activeInputId = $('[data-type="' + types[0] + '"]').attr('id');
     $('.' + _activeInputId).addClass('open');
-    $('#active-name').text(getTitle(_title));
+    $('#active-name').text('технику');
   }
 });
 'use strict';
