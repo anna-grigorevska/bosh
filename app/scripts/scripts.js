@@ -2646,20 +2646,20 @@ $(document).ready(function () {
     var valid = true;
     $('#thank-callback-modal input').removeClass('error');
     var location = $('#thank-callback-modal input[name="location"]').val() || false;
-    if (!location) {
-      valid = false;
-      $('#thank-callback-modal input[name="location"]').addClass('error');
-    }
+    // if(!location){
+    //   valid = false;
+    //   $('#thank-callback-modal input[name="location"]').addClass('error')
+    // }
     var options = $('#thank-callback-modal input[name="options"]').val() || false;
     if (!options) {
       valid = false;
       $('#thank-callback-modal input[name="options"]').addClass('error');
     }
     var user = $('#thank-callback-modal input[name="user"]').val() || false;
-    if (!user) {
-      valid = false;
-      $('#thank-callback-modal input[name="user"]').addClass('error');
-    }
+    // if(!user){
+    //   valid = false;
+    //   $('#thank-callback-modal input[name="user"]').addClass('error')
+    // }
     if (!valid) {
       return false;
     }
@@ -2676,21 +2676,21 @@ $(document).ready(function () {
       valid = false;
       $('#fix-modal input[name="phone"]').addClass('error');
     }
-    var location = $('#fix-modal input[name="location"]').val() || false;
-    if (!location) {
-      valid = false;
-      $('#fix-modal input[name="location"]').addClass('error');
-    }
+    // let location = $('#fix-modal input[name="location"]').val() || false;
+    // if(!location){
+    //   valid = false;
+    //   $('#fix-modal input[name="location"]').addClass('error')
+    // }
     var option = $('#fix-modal input[name="option"]').val() || false;
     if (!option) {
       valid = false;
       $('#fix-modal input[name="option"]').addClass('error');
     }
     var user = $('#fix-modal input[name="user"]').val() || false;
-    if (!user) {
-      valid = false;
-      $('#fix-modal input[name="user"]').addClass('error');
-    }
+    // if(!user){
+    //   valid = false;
+    //   $('#fix-modal input[name="user"]').addClass('error')
+    // }
     if (!valid) {
       return false;
     }
@@ -2709,10 +2709,10 @@ $(document).ready(function () {
       $(this).find('[name="tel"]').addClass('error');
     }
     var location = $(this).find('[name="geo"]').val();
-    if (!location) {
-      valid = false;
-      $(this).find('[name="geo"]').addClass('error');
-    }
+    // if(!location){
+    //   valid = false;
+    //   $(this).find('[name="geo"]').addClass('error')
+    // }
     var option = $(this).find('[name="problem"]').val();
     if (!option) {
       valid = false;

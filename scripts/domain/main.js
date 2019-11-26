@@ -99,20 +99,20 @@ $(document).ready(function() {
     let valid = true;
     $('#thank-callback-modal input').removeClass('error')
     let location = $('#thank-callback-modal input[name="location"]').val() || false;
-    if(!location){
-      valid = false;
-      $('#thank-callback-modal input[name="location"]').addClass('error')
-    }
+    // if(!location){
+    //   valid = false;
+    //   $('#thank-callback-modal input[name="location"]').addClass('error')
+    // }
     let options = $('#thank-callback-modal input[name="options"]').val() || false;
     if(!options){
       valid = false;
       $('#thank-callback-modal input[name="options"]').addClass('error')
     }
     let user = $('#thank-callback-modal input[name="user"]').val() || false;
-    if(!user){
-      valid = false;
-      $('#thank-callback-modal input[name="user"]').addClass('error')
-    }
+    // if(!user){
+    //   valid = false;
+    //   $('#thank-callback-modal input[name="user"]').addClass('error')
+    // }
     if(!valid) {return false}
     updateOrder(user, options, location)
     $('#thank-callback-modal').removeClass('open');
@@ -127,21 +127,21 @@ $(document).ready(function() {
       valid = false;
       $('#fix-modal input[name="phone"]').addClass('error')
     }
-    let location = $('#fix-modal input[name="location"]').val() || false;
-    if(!location){
-      valid = false;
-      $('#fix-modal input[name="location"]').addClass('error')
-    }
+    // let location = $('#fix-modal input[name="location"]').val() || false;
+    // if(!location){
+    //   valid = false;
+    //   $('#fix-modal input[name="location"]').addClass('error')
+    // }
     let option = $('#fix-modal input[name="option"]').val() || false;
     if(!option){
       valid = false;
       $('#fix-modal input[name="option"]').addClass('error')
     }
     let user = $('#fix-modal input[name="user"]').val() || false;
-    if(!user){
-      valid = false;
-      $('#fix-modal input[name="user"]').addClass('error')
-    }
+    // if(!user){
+    //   valid = false;
+    //   $('#fix-modal input[name="user"]').addClass('error')
+    // }
     if(!valid) {return false}
     createOrder(phone, user, option, location)
     $('#fix-modal').removeClass('open');
@@ -158,10 +158,10 @@ $(document).ready(function() {
       $(this).find('[name="tel"]').addClass('error')
     }
     let location = $(this).find('[name="geo"]').val()
-    if(!location){
-      valid = false;
-      $(this).find('[name="geo"]').addClass('error')
-    }
+    // if(!location){
+    //   valid = false;
+    //   $(this).find('[name="geo"]').addClass('error')
+    // }
     let option = $(this).find('[name="problem"]').val()
     if(!option){
       valid = false;
