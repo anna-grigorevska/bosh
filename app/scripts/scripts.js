@@ -2651,10 +2651,10 @@ $(document).ready(function () {
     //   $('#thank-callback-modal input[name="location"]').addClass('error')
     // }
     var options = $('#thank-callback-modal input[name="options"]').val() || false;
-    if (!options) {
-      valid = false;
-      $('#thank-callback-modal input[name="options"]').addClass('error');
-    }
+    // if(!options){
+    //   valid = false;
+    //   $('#thank-callback-modal input[name="options"]').addClass('error')
+    // }
     var user = $('#thank-callback-modal input[name="user"]').val() || false;
     // if(!user){
     //   valid = false;
@@ -2682,10 +2682,10 @@ $(document).ready(function () {
     //   $('#fix-modal input[name="location"]').addClass('error')
     // }
     var option = $('#fix-modal input[name="option"]').val() || false;
-    if (!option) {
-      valid = false;
-      $('#fix-modal input[name="option"]').addClass('error');
-    }
+    // if(!option){
+    //   valid = false;
+    //   $('#fix-modal input[name="option"]').addClass('error')
+    // }
     var user = $('#fix-modal input[name="user"]').val() || false;
     // if(!user){
     //   valid = false;
@@ -2714,10 +2714,10 @@ $(document).ready(function () {
     //   $(this).find('[name="geo"]').addClass('error')
     // }
     var option = $(this).find('[name="problem"]').val();
-    if (!option) {
-      valid = false;
-      $(this).find('[name="problem"]').addClass('error');
-    }
+    // if(!option){
+    //   valid = false;
+    //   $(this).find('[name="problem"]').addClass('error')
+    // }
     if (!valid) {
       return false;
     }
