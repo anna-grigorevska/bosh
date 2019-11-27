@@ -127,7 +127,7 @@ $(document).ready(function() {
       valid = false;
       $('#fix-modal input[name="phone"]').addClass('error')
     }
-    // let location = $('#fix-modal input[name="location"]').val() || false;
+    let location = $('#fix-modal input[name="location"]').val() || false;
     // if(!location){
     //   valid = false;
     //   $('#fix-modal input[name="location"]').addClass('error')
